@@ -1,0 +1,8 @@
+# OS & System
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editors
+.vscode/
+.idea/

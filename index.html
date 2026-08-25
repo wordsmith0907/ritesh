@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ritesh Agarwal | Luxury Wedding Photography &amp; Films</title>
+  <meta name="description" content="Luxury wedding photography & film studio by Ritesh Agarwal. Specialising in off-beat candid wedding photography worldwide.">
+  <link rel="icon" type="image/png" href="assets/shared/favicon.png">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  
+  <!-- CSS System -->
+  <link rel="stylesheet" href="styles/base.css?v=7">
+
+  <!-- GSAP Core & ScrollTrigger CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <script src="js/nav.js" defer></script>
+  <script src="js/footer.js" defer></script>
+  <script src="js/animations.js" defer></script>
+</head>
+<body>
+
+  <!-- Sticky Site Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="site-logo">
+        <img src="assets/shared/logo-light.png" alt="Ritesh Photos &amp; Films" style="height: 53px; width: auto; display: block;">
+      </a>
+
+      <nav class="nav-desktop">
+        <a href="real-weddings.html" class="nav-link">Weddings</a>
+        <a href="films.html" class="nav-link">Films</a>
+        <a href="portfolio.html" class="nav-link">Portfolio</a>
+        <a href="about-us.html" class="nav-link">About Us</a>
+        <a href="testimonials.html" class="nav-link">Testimonials</a>
+        <a href="contact-us.html" class="nav-link">Contact Us</a>
+      </nav>
+
+      <button class="mobile-nav-toggle" aria-label="Toggle Navigation">
+        <span style="background-color: #fff;"></span>
+        <span style="background-color: #fff;"></span>
+        <span style="background-color: #fff;"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-nav-drawer">
+    <a href="index.html" class="mobile-nav-link">Home</a>
+    <a href="real-weddings.html" class="mobile-nav-link">Weddings</a>
+    <a href="films.html" class="mobile-nav-link">Films</a>
+    <a href="portfolio.html" class="mobile-nav-link">Portfolio</a>
+    <a href="about-us.html" class="mobile-nav-link">About Us</a>
+    <a href="testimonials.html" class="mobile-nav-link">Testimonials</a>
+    <a href="contact-us.html" class="mobile-nav-link">Contact Us</a>
+  </div>
+
+  <main>
+    <!-- Full-Width Background Video Hero Section -->
+    <section class="hero-fullscreen">
+      <video autoplay muted loop playsinline class="hero-video-bg">
+        <source src="assets/home/hero-reel.mp4" type="video/mp4">
+      </video>
+      <div class="hero-overlay"></div>
+
+      <div class="hero-bottom-left reveal-on-scroll">
+        <h1 class="hero-legacy-title">Making the Fleeting Last</h1>
+      </div>
+
+      <div class="hero-bottom-right reveal-on-scroll">
+        <p class="hero-subheading-text">
+          Ritesh Photos is a second-generation photography and cinematography house from New Delhi, with over 45 years of experience capturing celebrations, people and stories through a timeless yet contemporary lens, for memories made to be cherished across generations.
+        </p>
+      </div>
+    </section>
+
+    <!-- Editorial Quote Block Section (Below Hero Section) -->
+    <section class="section-quote-block">
+      <!-- Flush Top-Left Oversized Quote Mark -->
+      <div class="quote-mark-corner" aria-hidden="true">&rdquo;</div>
+
+      <div style="max-width: 1400px; width: 100%; margin: 0 auto; position: relative; z-index: 2; text-align: center;">
+        <div class="reveal-on-scroll">
+          <blockquote class="editorial-quote-text">
+            &ldquo;What passes in a moment, lives on in a photograph.&rdquo;
+          </blockquote>
+          <cite class="editorial-quote-attribution" id="quote-attribution-end">~ RITESH</cite>
+        </div>
+      </div>
+    </section>
+
+    <!-- Selected Work Gallery Section (5x5 Grid) -->
+    <section class="section section-warm-dark" id="selected-work-section" style="padding-top: var(--section-padding-y); padding-bottom: calc(var(--section-padding-y) / 2);">
+      <div class="gallery-container">
+        <div style="margin-bottom: 2.5rem; text-align: center;" class="reveal-on-scroll">
+          <h2 class="title-h1" style="font-size: calc(var(--fs-h1) + 5px);">SELECTED WORK</h2>
+        </div>
+
+        <div class="grid-5">
+          <div class="gallery-card" data-lightbox="assets/portfolio/gallery-1.jpg">
+            <img src="assets/portfolio/gallery-1.jpg" alt="Selected Work 1" class="gallery-card-img" loading="lazy">
+          </div>
+          <div class="gallery-card" data-lightbox="assets/portfolio/gallery-2.jpg">
+            <img src="assets/portfolio/gallery-2.jpg" alt="Selected Work 2" class="gallery-card-img" loading="lazy">
+          </div>
+          <div class="gallery-card" data-lightbox="assets/portfolio/gallery-3.jpg">
+            <img src="assets/portfolio/gallery-3.jpg" alt="Selected Work 3" class="gallery-card-img" loading="lazy">
+          </div>
+          <div class="gallery-card" data-lightbox="assets/portfolio/gallery-4.jpg">
+            <img src="assets/portfolio/gallery-4.jpg" alt="Selected Work 4" class="gallery-card-img" loading="lazy">
+          </div>
+          <div class="gallery-card" data-lightbox="assets/portfolio/gallery-5.jpg">
+            <img src="assets/portfolio/gallery-5.jpg" alt="Selected Work 5" class="gallery-card-img" loading="lazy">
+          </div>
+
+          <div class="gallery-card" data-lightbox="assets/portfolio/gallery-6.jpg">
+            <img src="assets/portfolio/gallery-6.jpg" alt="Selected Work 6" class="gallery-card-img" loading="lazy">
+          </div>
+          <div class="gallery-card" data-lightbox="assets/portfolio/gallery-7.jpg">
+            <img src="assets/portfolio/gallery-7.jpg" alt="Selected Work 7" class="gallery-card-img" loading="lazy">
+          </div>
+          <div class="gallery-card" data-lightbox="assets/portfolio/gallery-8.jpg">
+            <img src="assets/portfolio/gallery-8.jpg" alt="Selected Work 8" class="gallery-card-img" loading="lazy">
+          </div>
+          <div class="gallery-card" data-lightbox="assets/portfolio/gallery-9.jpg">
+            <img src="assets/portfolio/gallery-9.jpg" alt="Selected Work 9" class="gallery-card-img" loading="lazy">
+          </div>
+          <div class="gallery-card" data-lightbox="assets/portfolio/gallery-10.jpg">
+            <img src="assets/portfolio/gallery-10.jpg" alt="Selected Work 10" class="gallery-card-img" loading="lazy">
+          </div>
+
+          <div class="gallery-card" data-lightbox="assets/portfolio/gallery-11.jpg">
+            <img src="assets/portfolio/gallery-11.jpg" alt="Selected Work 11" class="gallery-card-img" loading="lazy">
+          </div>
+          <div class="gallery-card" data-lightbox="assets/portfolio/gallery-12.jpg">
+            <img src="assets/portfolio/gallery-12.jpg" alt="Selected Work 12" class="gallery-card-img" loading="lazy">
+          </div>
+          <div class="gallery-card" data-lightbox="assets/portfolio/gallery-13.jpg">
+            <img src="assets/portfolio/gallery-13.jpg" alt="Selected Work 13" class="gallery-card-img" loading="lazy">
+          </div>
+          <div class="gallery-card" data-lightbox="assets/portfolio/gallery-14.jpg">
+            <img src="assets/portfolio/gallery-14.jpg" alt="Selected Work 14" class="gallery-card-img" loading="lazy">
+          </div>
+          <div class="gallery-card" data-lightbox="assets/portfolio/gallery-15.jpg">
+            <img src="assets/portfolio/gallery-15.jpg" alt="Selected Work 15" class="gallery-card-img" loading="lazy">
+          </div>
+
+          <div class="gallery-card" data-lightbox="assets/portfolio/gallery-16.jpg">
+            <img src="assets/portfolio/gallery-16.jpg" alt="Selected Work 16" class="gallery-card-img" loading="lazy">
+          </div>
+          <div class="gallery-card" data-lightbox="assets/portfolio/gallery-17.jpg">
+            <img src="assets/portfolio/gallery-17.jpg" alt="Selected Work 17" class="gallery-card-img" loading="lazy">
+          </div>
+          <div class="gallery-card" data-lightbox="assets/portfolio/gallery-18.jpg">
+            <img src="assets/portfolio/gallery-18.jpg" alt="Selected Work 18" class="gallery-card-img" loading="lazy">
+          </div>
+          <div class="gallery-card" data-lightbox="assets/portfolio/gallery-19.jpg">
+            <img src="assets/portfolio/gallery-19.jpg" alt="Selected Work 19" class="gallery-card-img" loading="lazy">
+          </div>
+          <div class="gallery-card" data-lightbox="assets/portfolio/gallery-20.jpg">
+            <img src="assets/portfolio/gallery-20.jpg" alt="Selected Work 20" class="gallery-card-img" loading="lazy">
+          </div>
+
+          <div class="gallery-card" data-lightbox="assets/portfolio/gallery-21.jpg">
+            <img src="assets/portfolio/gallery-21.jpg" alt="Selected Work 21" class="gallery-card-img" loading="lazy">
+          </div>
+          <div class="gallery-card" data-lightbox="assets/portfolio/gallery-22.jpg">
+            <img src="assets/portfolio/gallery-22.jpg" alt="Selected Work 22" class="gallery-card-img" loading="lazy">
+          </div>
+          <div class="gallery-card" data-lightbox="assets/portfolio/gallery-23.jpg">
+            <img src="assets/portfolio/gallery-23.jpg" alt="Selected Work 23" class="gallery-card-img" loading="lazy">
+          </div>
+          <div class="gallery-card" data-lightbox="assets/portfolio/gallery-24.jpg">
+            <img src="assets/portfolio/gallery-24.jpg" alt="Selected Work 24" class="gallery-card-img" loading="lazy">
+          </div>
+          <div class="gallery-card" data-lightbox="assets/portfolio/gallery-25.jpg">
+            <img src="assets/portfolio/gallery-25.jpg" alt="Selected Work 25" class="gallery-card-img" loading="lazy">
+          </div>
+        </div>
+
+        <!-- Centered Explore Link below 5x5 Grid -->
+        <div class="gallery-explore-link-wrapper reveal-on-scroll">
+          <a href="portfolio.html" class="gallery-explore-link">EXPLORE ALL</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Weddings Auto-Scrolling Carousel Section -->
+    <section class="section section-warm-dark" id="our-weddings-section" style="overflow: hidden; color: #FAF5EA;">
+      <div class="container">
+        <div style="margin-bottom: 2.5rem;" class="reveal-on-scroll">
+          <h2 class="title-h1" style="font-size: calc(var(--fs-h1) + 5px);">OUR WEDDINGS</h2>
+        </div>
+      </div>
+
+      <div class="weddings-carousel-wrapper">
+        <div class="weddings-carousel-track">
+          <!-- Card 1 — Sikh Community -->
+          <a href="real-weddings/harpreet-gurleen-anand-karaj-celebration.html" class="story-card">
+            <div class="story-card-img-wrapper">
+              <img src="assets/real-weddings/dehradun-hero.webp" alt="Harpreet & Gurleen" class="story-card-img" loading="lazy">
+              <div class="story-card-img-overlay">
+                <h3 class="story-card-overlay-title">Harpreet &amp; Gurleen</h3>
+              </div>
+            </div>
+            <div class="story-card-content">
+              <p class="story-card-location">A Serene Anand Karaj Celebration</p>
+            </div>
+          </a>
+
+          <!-- Card 2 — Haryanvi Community -->
+          <a href="real-weddings/jaideep-reena-vibrant-celebration-rohtak.html" class="story-card">
+            <div class="story-card-img-wrapper">
+              <img src="assets/real-weddings/jaisalmer-hero.webp" alt="Jaideep & Reena" class="story-card-img" loading="lazy">
+              <div class="story-card-img-overlay">
+                <h3 class="story-card-overlay-title">Jaideep &amp; Reena</h3>
+              </div>
+            </div>
+            <div class="story-card-content">
+              <p class="story-card-location">A Vibrant Celebration in Rohtak</p>
+            </div>
+          </a>
+
+          <!-- Card 3 — Gujarati Community -->
+          <a href="real-weddings/parth-dhwani-royal-garba-destination-wedding.html" class="story-card">
+            <div class="story-card-img-wrapper">
+              <img src="assets/real-weddings/jaipur-hero.webp" alt="Parth & Dhwani" class="story-card-img" loading="lazy">
+              <div class="story-card-img-overlay">
+                <h3 class="story-card-overlay-title">Parth &amp; Dhwani</h3>
+              </div>
+            </div>
+            <div class="story-card-content">
+              <p class="story-card-location">Royal Garba &amp; Destination Wedding</p>
+            </div>
+          </a>
+
+          <!-- Card 4 — South Indian Community -->
+          <a href="real-weddings/karthik-soundarya-heritage-muhurtham.html" class="story-card">
+            <div class="story-card-img-wrapper">
+              <img src="assets/real-weddings/bangkok-hero.webp" alt="Karthik & Soundarya" class="story-card-img" loading="lazy">
+              <div class="story-card-img-overlay">
+                <h3 class="story-card-overlay-title">Karthik &amp; Soundarya</h3>
+              </div>
+            </div>
+            <div class="story-card-content">
+              <p class="story-card-location">Grand Heritage Muhurtham</p>
+            </div>
+          </a>
+
+          <!-- Duplicated Set for Infinite Seamless Loop -->
+          <!-- Card 1 Duplicate — Sikh Community -->
+          <a href="real-weddings/harpreet-gurleen-anand-karaj-celebration.html" class="story-card" aria-hidden="true">
+            <div class="story-card-img-wrapper">
+              <img src="assets/real-weddings/dehradun-hero.webp" alt="Harpreet & Gurleen" class="story-card-img" loading="lazy">
+              <div class="story-card-img-overlay">
+                <h3 class="story-card-overlay-title">Harpreet &amp; Gurleen</h3>
+              </div>
+            </div>
+            <div class="story-card-content">
+              <p class="story-card-location">A Serene Anand Karaj Celebration</p>
+            </div>
+          </a>
+
+          <!-- Card 2 Duplicate — Haryanvi Community -->
+          <a href="real-weddings/jaideep-reena-vibrant-celebration-rohtak.html" class="story-card" aria-hidden="true">
+            <div class="story-card-img-wrapper">
+              <img src="assets/real-weddings/jaisalmer-hero.webp" alt="Jaideep & Reena" class="story-card-img" loading="lazy">
+              <div class="story-card-img-overlay">
+                <h3 class="story-card-overlay-title">Jaideep &amp; Reena</h3>
+              </div>
+            </div>
+            <div class="story-card-content">
+              <p class="story-card-location">A Vibrant Celebration in Rohtak</p>
+            </div>
+          </a>
+
+          <!-- Card 3 Duplicate — Gujarati Community -->
+          <a href="real-weddings/parth-dhwani-royal-garba-destination-wedding.html" class="story-card" aria-hidden="true">
+            <div class="story-card-img-wrapper">
+              <img src="assets/real-weddings/jaipur-hero.webp" alt="Parth & Dhwani" class="story-card-img" loading="lazy">
+              <div class="story-card-img-overlay">
+                <h3 class="story-card-overlay-title">Parth &amp; Dhwani</h3>
+              </div>
+            </div>
+            <div class="story-card-content">
+              <p class="story-card-location">Royal Garba &amp; Destination Wedding</p>
+            </div>
+          </a>
+
+          <!-- Card 4 Duplicate — South Indian Community -->
+          <a href="real-weddings/karthik-soundarya-heritage-muhurtham.html" class="story-card" aria-hidden="true">
+            <div class="story-card-img-wrapper">
+              <img src="assets/real-weddings/bangkok-hero.webp" alt="Karthik & Soundarya" class="story-card-img" loading="lazy">
+              <div class="story-card-img-overlay">
+                <h3 class="story-card-overlay-title">Karthik &amp; Soundarya</h3>
+              </div>
+            </div>
+            <div class="story-card-content">
+              <p class="story-card-location">Grand Heritage Muhurtham</p>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Centered See More Link below Our Weddings Carousel -->
+      <div class="gallery-explore-link-wrapper reveal-on-scroll" style="margin-top: 2.5rem; position: relative; z-index: 2;">
+        <a href="real-weddings.html" class="gallery-explore-link" id="weddings-see-more-end">SEE MORE</a>
+      </div>
+    </section>
+
+    <!-- Guided By Emotion Section -->
+    <section class="section section-secondary" id="guided-by-emotion-section">
+      <div class="container">
+        <!-- Centered Section Heading -->
+        <div style="text-align: center; margin-bottom: 3.5rem;" class="reveal-on-scroll">
+          <h2 class="title-h1" style="font-size: calc(var(--fs-h1) + 5px); color: var(--color-text-primary);">THE RITESH STORY</h2>
+        </div>
+
+        <div class="grid-2" style="align-items: center;">
+          <div class="reveal-on-scroll">
+            <p style="font-size: 1.15rem; line-height: 1.8; margin-bottom: 1.5rem; color: var(--color-text-body);">
+              For over four decades, Ritesh Photos has believed that the most meaningful photographs are found beyond the obvious. In the quiet glances, unguarded laughter, fleeting gestures, and emotions that unfold naturally between people.
+            </p>
+            <p style="font-size: 1.15rem; line-height: 1.8; margin-bottom: 1.5rem; color: var(--color-text-body);">
+              As a second-generation photography and cinematography house, we bring together the richness of experience with a contemporary eye &mdash; observing rather than interrupting, and documenting each celebration with honesty, artistry, and intention.
+            </p>
+            <p style="font-size: 1.15rem; line-height: 1.8; margin-bottom: 1.5rem; color: var(--color-text-body);">
+              From intimate gatherings to grand celebrations, we create photographs and films that feel true to the people in them &mdash; preserving not just how a moment looked, but how it felt.
+            </p>
+            <p style="font-size: calc(1.25rem + 2px); font-family: var(--font-serif); font-style: italic; line-height: 1.6; color: var(--color-text-primary); margin-bottom: 1.75rem;">
+              Because when the moment passes, the photograph remains.
+            </p>
+            <div style="text-align: left; margin-top: 1.25rem;">
+              <img src="assets/shared/signature.png" alt="Saajan Signature" style="height: 128px; width: auto; display: block;">
+            </div>
+          </div>
+          <div class="reveal-on-scroll" style="position: relative; border-radius: 28px; overflow: hidden; box-shadow: var(--shadow-card); background-color: transparent;">
+            <img src="assets/home/singh-story-founders.jpg?v=4" alt="Ritesh Photos Story" style="width: 100%; height: auto; max-height: 520px; display: block; object-fit: contain; border-radius: 28px; -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%); mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Two-Column Editorial Sentence-Style Contact Component -->
+    <section class="section" style="padding-top: 3.5rem; padding-bottom: 5rem;" id="contact-studio-section">
+      <div class="container">
+        <div style="text-align: center; max-width: 760px; margin: 0 auto 3.5rem auto;" class="reveal-on-scroll">
+          <h2 class="title-h1" style="font-size: calc(var(--fs-h1) + 5px);">Let’s Create</h2>
+        </div>
+
+        <div class="sentence-contact-split reveal-on-scroll">
+          
+          <!-- LEFT COLUMN (50%): FULL-BLEED PHOTO CARD WITH BOTTOM GRADIENT OVERLAY -->
+          <div class="sentence-contact-left">
+            <img src="assets/shared/contact-card-bg.jpg?v=1" alt="Indian Wedding Couple Celebration" class="studio-left-bg-img">
+            <div class="studio-left-gradient-overlay"></div>
+            
+            <div class="studio-left-content">
+              <p class="studio-left-intro">
+                Tell us about your celebration, your vision, and what matters most to you. We'd love to craft something timeless together.
+              </p>
+              <div class="studio-left-signature">
+                <img src="assets/shared/signature.png" alt="Ritesh Signature" class="studio-signature-white">
+              </div>
+            </div>
+          </div>
+
+          <!-- RIGHT COLUMN (55%): 3-STEP INLINE SENTENCE FORM -->
+          <div class="sentence-contact-right">
+            <div class="sentence-contact-right-inner">
+              <!-- Top Centered Progress Track -->
+              <div class="sentence-step-header">
+                <div class="sentence-progress-track">
+                  <div class="sentence-progress-fill" style="width: 33.33%;"></div>
+                </div>
+              </div>
+
+              <form class="sentence-form-wrapper" action="#" method="POST">
+                
+                <!-- STEP 1: ABOUT YOU -->
+              <div class="sentence-step-pane active" data-step="1">
+                <div class="sentence-block">
+                  MY NAME IS 
+                  <input type="text" name="name" class="blank-input" placeholder="Your name" required> 
+                  AND MY EMAIL IS 
+                  <input type="email" name="email" class="blank-input" placeholder="you@email.com" required>.
+                </div>
+
+                <div class="sentence-block">
+                  I'M PLANNING A WEDDING FOR 
+                  <input type="text" name="couple_name" class="blank-input" placeholder="Couple name"> 
+                  AND YOU CAN REACH ME AT 
+                  <input type="tel" name="phone" class="blank-input" placeholder="Phone number" inputmode="tel" pattern="[\+]?[0-9]*" autocomplete="tel">.
+                </div>
+
+                <div class="sentence-step-actions" style="justify-content: center;">
+                  <button type="button" class="sentence-submit-btn sentence-btn-next" data-next="2">
+                    CONTINUE &rarr;
+                  </button>
+                </div>
+              </div>
+
+              <!-- STEP 2: THE WEDDING DETAILS -->
+              <div class="sentence-step-pane" data-step="2">
+                <div class="sentence-block">
+                  THE VIBE I'M ENVISIONING IS 
+                  <select name="vibe" class="blank-select">
+                    <option value="Grand Traditional">Grand Traditional</option>
+                    <option value="Intimate & Candid">Intimate &amp; Candid</option>
+                    <option value="Royal & Cinematic">Royal &amp; Cinematic</option>
+                    <option value="High-Energy">High-Energy</option>
+                    <option value="Other">Other</option>
+                  </select>
+                  <input type="text" name="vibe_other" class="blank-input inline-other-input" placeholder="specify vibe">.
+                </div>
+
+                <div class="sentence-block">
+                  WHAT DREW ME TO YOU IS 
+                  <textarea name="drew_me" class="blank-textarea" rows="2" placeholder="Tell us what caught your eye…"></textarea>
+                </div>
+
+                <div class="sentence-block">
+                  THE WEDDING DATE IS 
+                  <input type="date" name="wedding_date" class="blank-input" style="font-family: var(--font-serif); font-size: 1.25rem;"> 
+                  WITH CEREMONY TIMINGS 
+                  <input type="text" name="ceremony_timings" class="blank-input" placeholder="e.g. 6 PM – 11 PM">, 
+                  AND THE ENGAGEMENT/HALDI/SANGEET DATE(S) ARE 
+                  <input type="text" name="prewedding_dates" class="blank-input" placeholder="pre-wedding dates">.
+                </div>
+
+                <div class="sentence-block">
+                  IT'S A 
+                  <select name="culture" class="blank-select">
+                    <option value="Marwadi">Marwadi</option>
+                    <option value="Gujarati">Gujarati</option>
+                    <option value="Marathi">Marathi</option>
+                    <option value="Tamil">Tamil</option>
+                    <option value="Kannada">Kannada</option>
+                    <option value="Punjabi">Punjabi</option>
+                    <option value="Buddhist">Buddhist</option>
+                    <option value="Night Wedding">Night Wedding</option>
+                    <option value="Other">Other</option>
+                  </select>
+                  <input type="text" name="culture_other" class="blank-input inline-other-input" placeholder="specify culture"> 
+                  WEDDING, TAKING PLACE IN 
+                  <input type="text" name="city" class="blank-input" placeholder="Ceremony city"> 
+                  AT 
+                  <input type="text" name="venue" class="blank-input" placeholder="Venue / Google Maps link">.
+                </div>
+
+                <div class="sentence-block">
+                  FUNCTIONS I'D LIKE COVERED:
+                  <div class="pill-multi-group">
+                    <button type="button" class="pill-tag-btn">Engagement</button>
+                    <button type="button" class="pill-tag-btn">Haldi</button>
+                    <button type="button" class="pill-tag-btn">Sangeet</button>
+                    <button type="button" class="pill-tag-btn active">Wedding</button>
+                    <button type="button" class="pill-tag-btn">Reception</button>
+                    <button type="button" class="pill-tag-btn">Home Functions/Pooja/Mehndi</button>
+                  </div>
+                </div>
+
+                <div class="sentence-block">
+                  EXPECTED GUEST COUNT IS 
+                  <input type="text" name="wedding_guests" class="blank-input" placeholder="Wedding guests"> 
+                  FOR THE WEDDING AND 
+                  <input type="text" name="engagement_guests" class="blank-input" placeholder="Engagement guests"> 
+                  FOR THE ENGAGEMENT.
+                </div>
+
+                <div class="sentence-step-actions">
+                  <button type="button" class="sentence-btn-back" data-back="1">&larr; BACK</button>
+                  <button type="button" class="sentence-submit-btn sentence-btn-next" data-next="3">
+                    CONTINUE &rarr;
+                  </button>
+                </div>
+              </div>
+
+              <!-- STEP 3: SCOPE & BUDGET -->
+              <div class="sentence-step-pane" data-step="3">
+                <div class="sentence-block">
+                  I'M LOOKING FOR:
+                  <div class="pill-multi-group">
+                    <button type="button" class="pill-tag-btn active">Candid Photography</button>
+                    <button type="button" class="pill-tag-btn active">Cinematic Teaser</button>
+                    <button type="button" class="pill-tag-btn">Cinematic Full Film</button>
+                    <button type="button" class="pill-tag-btn">Traditional Pictures</button>
+                    <button type="button" class="pill-tag-btn">Traditional Video</button>
+                    <button type="button" class="pill-tag-btn">Album</button>
+                    <button type="button" class="pill-tag-btn">Reels</button>
+                    <button type="button" class="pill-tag-btn">Drone</button>
+                    <button type="button" class="pill-tag-btn">Other</button>
+                  </div>
+                </div>
+
+                <div class="sentence-block">
+                  I'D LIKE TO FINALIZE THIS 
+                  <select name="timeline" class="blank-select">
+                    <option value="Immediately">Immediately</option>
+                    <option value="One Week">One Week</option>
+                    <option value="One Month">One Month</option>
+                    <option value="Two Months">Two Months</option>
+                  </select>, 
+                  WITH A BUDGET AROUND 
+                  <select name="budget" class="blank-select">
+                    <option value="₹75,000–1,00,000">₹75,000–1,00,000</option>
+                    <option value="₹1,00,000–1,50,000">₹1,00,000–1,50,000</option>
+                    <option value="₹3,00,000">₹3,00,000</option>
+                    <option value="₹5,00,000+">₹5,00,000+</option>
+                    <option value="Other">Other</option>
+                  </select>
+                  <input type="text" name="budget_other" class="blank-input inline-other-input" placeholder="custom budget">.
+                </div>
+
+                <div class="sentence-block">
+                  I'D PREFER TO CONNECT VIA 
+                  <select name="connection" class="blank-select">
+                    <option value="Quick Phone Call">Quick Phone Call</option>
+                    <option value="In-Studio Coffee Chat">In-Studio Coffee Chat</option>
+                    <option value="Video Call">Video Call</option>
+                  </select>.
+                </div>
+
+                <div class="sentence-step-actions">
+                  <button type="button" class="sentence-btn-back" data-back="2">&larr; BACK</button>
+                  <button type="submit" class="sentence-submit-btn">
+                    SUBMIT PROPOSAL INQUIRY &rarr;
+                  </button>
+                </div>
+              </div>
+
+              </form>
+            </div>
+          </div>
+
+          <!-- Centered Know More Link below Contact Section -->
+          <div class="gallery-explore-link-wrapper reveal-on-scroll" style="margin-top: 3.5rem; text-align: center;">
+            <a href="about-us.html" class="gallery-explore-link dark">KNOW MORE</a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Reviews Section (5-Card Reference Carousel) -->
+    <section class="section section-reviews-carousel" id="testimonials">
+      
+      <div class="reviews-carousel-header text-center">
+        <h2 class="title-h1">Letters &amp; Testimonials</h2>
+      </div>
+
+      <div class="reviews-carousel-stage">
+        <div class="reviews-carousel-track">
+          
+          <!-- Card 1 -->
+          <a href="real-weddings/harpreet-gurleen-anand-karaj-celebration.html" class="review-card" data-card-id="1">
+            <div class="review-image-wrapper">
+              <img src="assets/real-weddings/dehradun-hero.webp" alt="Harpreet &amp; Gurleen Wedding" class="review-image" loading="lazy">
+            </div>
+            <div class="review-content">
+              <div class="quote-mark">&ldquo;</div>
+              <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              <p class="review-text">Set against the tranquil foothills of Dehradun, our Anand Karaj was captured with such grace and soulful emotion. Ritesh felt like an extended part of our family.</p>
+              <div class="review-divider"></div>
+              <div class="review-author">
+                <img src="assets/real-weddings/dehradun-hero.webp" alt="Harpreet &amp; Gurleen" class="author-avatar" loading="lazy">
+                <div class="author-info">
+                  <span class="author-name">Harpreet &amp; Gurleen</span>
+                  <span class="author-location">Dehradun</span>
+                </div>
+              </div>
+            </div>
+          </a>
+
+          <!-- Card 2 -->
+          <a href="real-weddings/jaideep-reena-vibrant-celebration-rohtak.html" class="review-card" data-card-id="2">
+            <div class="review-image-wrapper">
+              <img src="assets/real-weddings/jaisalmer-hero.webp" alt="Jaideep &amp; Reena Wedding" class="review-image" loading="lazy">
+            </div>
+            <div class="review-content">
+              <div class="quote-mark">&ldquo;</div>
+              <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              <p class="review-text">From the high-energy Baraat to the final album, the experience was seamless. They truly captured the authentic Haryanvi warmth and joy.</p>
+              <div class="review-divider"></div>
+              <div class="review-author">
+                <img src="assets/real-weddings/jaisalmer-hero.webp" alt="Jaideep &amp; Reena" class="author-avatar" loading="lazy">
+                <div class="author-info">
+                  <span class="author-name">Jaideep &amp; Reena</span>
+                  <span class="author-location">Rohtak</span>
+                </div>
+              </div>
+            </div>
+          </a>
+
+          <!-- Card 3 (Master Center Card) -->
+          <a href="real-weddings/parth-dhwani-royal-garba-destination-wedding.html" class="review-card" data-card-id="3">
+            <div class="review-image-wrapper">
+              <img src="assets/real-weddings/jaipur-hero.webp" alt="Parth &amp; Dhwani Wedding" class="review-image" loading="lazy">
+            </div>
+            <div class="review-content">
+              <div class="quote-mark">&ldquo;</div>
+              <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              <p class="review-text">Ritesh and his team captured our royal Garba and destination wedding beautifully. Every moment and emotion was documented so naturally.</p>
+              <div class="review-divider"></div>
+              <div class="review-author">
+                <img src="assets/real-weddings/jaipur-hero.webp" alt="Parth &amp; Dhwani" class="author-avatar" loading="lazy">
+                <div class="author-info">
+                  <span class="author-name">Parth &amp; Dhwani</span>
+                  <span class="author-location">Jaipur</span>
+                </div>
+              </div>
+            </div>
+          </a>
+
+          <!-- Card 4 -->
+          <a href="real-weddings/karthik-soundarya-heritage-muhurtham.html" class="review-card" data-card-id="4">
+            <div class="review-image-wrapper">
+              <img src="assets/real-weddings/bangkok-hero.webp" alt="Karthik &amp; Soundarya Wedding" class="review-image" loading="lazy">
+            </div>
+            <div class="review-content">
+              <div class="quote-mark">&ldquo;</div>
+              <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              <p class="review-text">Professional, warm, and incredibly talented. They made us feel so comfortable throughout our Muhurtham and heritage celebrations.</p>
+              <div class="review-divider"></div>
+              <div class="review-author">
+                <img src="assets/real-weddings/bangkok-hero.webp" alt="Karthik &amp; Soundarya" class="author-avatar" loading="lazy">
+                <div class="author-info">
+                  <span class="author-name">Karthik &amp; Soundarya</span>
+                  <span class="author-location">Chennai</span>
+                </div>
+              </div>
+            </div>
+          </a>
+
+          <!-- Card 5 -->
+          <a href="real-weddings/suryagarh-jaisalmer-destination-wedding.html" class="review-card" data-card-id="5">
+            <div class="review-image-wrapper">
+              <img src="assets/real-weddings/beach-picnic-hero.jpg" alt="Deepika &amp; Anuj Wedding" class="review-image" loading="lazy">
+            </div>
+            <div class="review-content">
+              <div class="quote-mark">&ldquo;</div>
+              <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              <p class="review-text">Suryagarh was a dream, but Ritesh's team brought that dream to life through their lenses. The golden hour portraits are beyond perfection.</p>
+              <div class="review-divider"></div>
+              <div class="review-author">
+                <img src="assets/real-weddings/beach-picnic-hero.jpg" alt="Deepika &amp; Anuj" class="author-avatar" loading="lazy">
+                <div class="author-info">
+                  <span class="author-name">Deepika &amp; Anuj</span>
+                  <span class="author-location">Jaisalmer</span>
+                </div>
+              </div>
+            </div>
+          </a>
+
+        </div>
+      </div>
+
+    </section>
+
+    <!-- FAQ Section (Two-Column Sticky-Header Layout) -->
+    <section class="section faq-section" id="faq-section">
+      <div class="container">
+        <div class="faq-layout reveal-on-scroll">
+          
+          <!-- LEFT COLUMN (35%): STICKY HEADING BLOCK -->
+          <div class="faq-left-col">
+            <div class="faq-sticky-box">
+              <h2 class="faq-main-title">FAQ:</h2>
+              <p class="faq-subtitle">Everything You Need to Know</p>
+            </div>
+          </div>
+
+          <!-- RIGHT COLUMN (65%): MINIMALIST ACCORDION LIST -->
+          <div class="faq-right-col">
+            <div class="faq-list">
+              
+              <div class="faq-item">
+                <button type="button" class="faq-trigger" aria-expanded="false">
+                  <span class="faq-question">Where are you based and do you travel for destination weddings?</span>
+                  <span class="faq-icon" aria-hidden="true">+</span>
+                </button>
+                <div class="faq-content">
+                  <div class="faq-content-inner">
+                    <p>We are based out of Delhi NCR, India. We frequently travel worldwide for destination weddings across Rajasthan, Goa, Thailand, Oman, Europe, and the USA.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button type="button" class="faq-trigger" aria-expanded="false">
+                  <span class="faq-question">What is your photography style?</span>
+                  <span class="faq-icon" aria-hidden="true">+</span>
+                </button>
+                <div class="faq-content">
+                  <div class="faq-content-inner">
+                    <p>Our signature style blends unscripted candid photojournalism with timeless editorial portraiture. We focus on real human emotions, vibrant colors, and natural laughter.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button type="button" class="faq-trigger" aria-expanded="false">
+                  <span class="faq-question">How far in advance should we book?</span>
+                  <span class="faq-icon" aria-hidden="true">+</span>
+                </button>
+                <div class="faq-content">
+                  <div class="faq-content-inner">
+                    <p>Peak Indian wedding season (October to March) fills up 6 to 12 months in advance. We recommend reaching out as soon as your venue and dates are finalized.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button type="button" class="faq-trigger" aria-expanded="false">
+                  <span class="faq-question">Do you provide both photography and wedding films/cinematography?</span>
+                  <span class="faq-icon" aria-hidden="true">+</span>
+                </button>
+                <div class="faq-content">
+                  <div class="faq-content-inner">
+                    <p>Yes! We offer complete integrated teams of senior candid photographers, traditional photographers, cinematographers, drone pilots, and editors.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button type="button" class="faq-trigger" aria-expanded="false">
+                  <span class="faq-question">Do you also shoot pre-wedding and engagement shoots?</span>
+                  <span class="faq-icon" aria-hidden="true">+</span>
+                </button>
+                <div class="faq-content">
+                  <div class="faq-content-inner">
+                    <p>Yes &mdash; we offer pre-wedding, engagement, and haldi/mehndi shoots as standalone sessions or as part of a full wedding package. Let us know what you're looking for and we'll tailor a plan around it.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button type="button" class="faq-trigger" aria-expanded="false">
+                  <span class="faq-question">What is your payment and booking process?</span>
+                  <span class="faq-icon" aria-hidden="true">+</span>
+                </button>
+                <div class="faq-content">
+                  <div class="faq-content-inner">
+                    <p>We require a booking advance to confirm your date, with the remaining balance split across the lead-up to the event and after final delivery. Full payment terms are shared in your proposal.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button type="button" class="faq-trigger" aria-expanded="false">
+                  <span class="faq-question">How long does it take to receive the final edited photos and films?</span>
+                  <span class="faq-icon" aria-hidden="true">+</span>
+                </button>
+                <div class="faq-content">
+                  <div class="faq-content-inner">
+                    <p>Edited photos are typically delivered within 3-4 weeks, and full wedding films within 6-8 weeks, depending on the season and scope of the event.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button type="button" class="faq-trigger" aria-expanded="false">
+                  <span class="faq-question">Do you provide both candid and traditional photography?</span>
+                  <span class="faq-icon" aria-hidden="true">+</span>
+                </button>
+                <div class="faq-content">
+                  <div class="faq-content-inner">
+                    <p>Yes &mdash; every wedding is covered with a mix of candid, documentary-style moments and traditional posed shots, so you get both the emotion and the formal family portraits.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button type="button" class="faq-trigger" aria-expanded="false">
+                  <span class="faq-question">What happens if our event runs longer than planned?</span>
+                  <span class="faq-icon" aria-hidden="true">+</span>
+                </button>
+                <div class="faq-content">
+                  <div class="faq-content-inner">
+                    <p>We build in a buffer for most packages, and if extra coverage is needed beyond that, additional hours can be added at our standard hourly rate &mdash; we'll always confirm with you first.</p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h3 class="footer-brand-title">Ritesh Agarwal</h3>
+          <p class="footer-brand-desc">
+            Luxury wedding photography &amp; cinematography house by Ritesh Agarwal, based in New Delhi, India. Capturing authentic emotions, timeless celebrations, and unscripted joy across destination weddings worldwide.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Navigation</h4>
+          <ul class="footer-links-list">
+            <li><a href="index.html" class="footer-link">Home</a></li>
+            <li><a href="real-weddings.html" class="footer-link">Weddings</a></li>
+            <li><a href="films.html" class="footer-link">Films</a></li>
+            <li><a href="portfolio.html" class="footer-link">Portfolio</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Company</h4>
+          <ul class="footer-links-list">
+            <li><a href="about-us.html" class="footer-link">About Us</a></li>
+            <li><a href="testimonials.html" class="footer-link">Testimonials</a></li>
+            <li><a href="job.html" class="footer-link">Work With Us</a></li>
+            <li><a href="contact-us.html" class="footer-link">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Connect</h4>
+          <ul class="footer-links-list">
+            <li><a href="https://www.instagram.com/designmela_com" target="_blank" rel="noopener" class="footer-link">Instagram</a></li>
+            <li><a href="https://youtube.com" target="_blank" rel="noopener" class="footer-link">YouTube</a></li>
+            <li><a href="mailto:ritesh@yourbusiness.com" class="footer-link">ritesh@yourbusiness.com</a></li>
+            <li><a href="term-condition.html" class="footer-link">Terms &amp; Conditions</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy;2026 Ritesh Photos &amp; Films. All rights reserved.</p>
+        <p>Delhi NCR, India</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Lightbox Modal -->
+  <div class="lightbox-modal">
+    <span class="lightbox-close">&times;</span>
+    <img src="" alt="Lightbox View" class="lightbox-img">
+  </div>
+
+</body>
+</html>
