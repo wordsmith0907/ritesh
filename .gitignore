@@ -6,3 +6,13 @@ desktop.ini
 # Editors
 .vscode/
 .idea/
+
+# Node & Build artifacts
+node_modules/
+package-lock.json
+package.json
+server.js
+record_showcase.js
+recordings/
+.vercel
+preview.html

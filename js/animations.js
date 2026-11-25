@@ -69,6 +69,232 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
     }
+
+    // 2b. Couple Wedding Pages: Hero Title Page-Load Slide-Up Animation
+    const coupleHeroTitles = document.querySelectorAll('.couple-hero-bg-section h1, .couple-hero-title');
+    if (coupleHeroTitles.length > 0) {
+      gsap.fromTo(coupleHeroTitles, 
+        { 
+          y: 45, 
+          opacity: 0 
+        }, 
+        { 
+          y: 0, 
+          opacity: 1, 
+          duration: 1.1, 
+          delay: 0.15,
+          ease: 'power3.out' 
+        }
+      );
+    }
+
+    // 2c. Homepage Hero Heading: Word-by-Word Staggered Slide-Up & Fade-In Reveal
+    const heroHeading = document.querySelector('.hero-legacy-title');
+    if (heroHeading && window.gsap && !prefersReducedMotion) {
+      const text = heroHeading.innerText.trim();
+      const words = text.split(/\s+/);
+      
+      heroHeading.innerHTML = words.map(word => 
+        `<span class="hero-word-wrap" style="display: inline-block; overflow: hidden; vertical-align: top; margin-right: 0.28em;"><span class="hero-word" style="display: inline-block; will-change: transform, opacity;">${word}</span></span>`
+      ).join('');
+
+      const wordElements = heroHeading.querySelectorAll('.hero-word');
+      if (wordElements.length > 0) {
+        gsap.fromTo(wordElements, 
+          { 
+            y: '105%', 
+            opacity: 0 
+          }, 
+          { 
+            y: '0%', 
+            opacity: 1, 
+            duration: 0.95, 
+            stagger: 0.12, 
+            delay: 0.2, 
+            ease: 'power3.out' 
+          }
+        );
+      }
+    }
+
+    // 2d. Homepage Hero Subheading: Line-by-Line Reveal with Mask
+    const heroSubheading = document.querySelector('.hero-subheading-text');
+    if (heroSubheading && window.gsap && !prefersReducedMotion) {
+      const originalText = heroSubheading.innerText.trim();
+      const words = originalText.split(/\s+/);
+
+      // Measure words to group them into actual visual rendered lines
+      heroSubheading.innerHTML = words.map(w => `<span class="word-measure" style="display: inline-block;">${w}</span>`).join(' ');
+      
+      const wordSpans = Array.from(heroSubheading.querySelectorAll('.word-measure'));
+      const lines = [];
+      let currentLine = [];
+      let currentTop = -1;
+
+      wordSpans.forEach(span => {
+        const top = span.offsetTop;
+        if (top !== currentTop) {
+          if (currentLine.length > 0) {
+            lines.push(currentLine.join(' '));
+          }
+          currentLine = [span.innerText];
+          currentTop = top;
+        } else {
+          currentLine.push(span.innerText);
+        }
+      });
+      if (currentLine.length > 0) {
+        lines.push(currentLine.join(' '));
+      }
+
+      // Rebuild with individual overflow-clipped mask containers
+      heroSubheading.innerHTML = lines.map(line => 
+        `<span class="hero-line-mask" style="display: block; overflow: hidden; position: relative;"><span class="hero-line-inner" style="display: block; will-change: transform, opacity;">${line}</span></span>`
+      ).join('');
+
+      const lineInners = heroSubheading.querySelectorAll('.hero-line-inner');
+      if (lineInners.length > 0) {
+        gsap.fromTo(lineInners, 
+          { 
+            y: '120%', 
+            opacity: 0 
+          }, 
+          { 
+            y: '0%', 
+            opacity: 1, 
+            duration: 0.9, 
+            stagger: 0.12, 
+            delay: 0.55, 
+            ease: 'power3.out' 
+          }
+        );
+      }
+    }
+
+    // 2e. Editorial Quote Section: Fade + Slide Up Animation
+    const quoteBlock = document.querySelector('.section-quote-block');
+    const quoteTextEl = document.querySelector('.editorial-quote-text');
+    const quoteAttrEl = document.querySelector('.editorial-quote-attribution');
+
+    if (quoteBlock && quoteTextEl && window.gsap && window.ScrollTrigger && !prefersReducedMotion) {
+      const quoteTargets = [quoteTextEl, quoteAttrEl].filter(Boolean);
+      gsap.set(quoteTargets, { y: 35, opacity: 0 });
+
+      ScrollTrigger.create({
+        trigger: quoteBlock,
+        start: 'top 78%',
+        once: true,
+        onEnter: () => {
+          gsap.to(quoteTargets, {
+            y: 0,
+            opacity: 1,
+            duration: 0.95,
+            stagger: 0.2,
+            ease: 'power3.out'
+          });
+        }
+      });
+    }
+
+    // 2f. Universal Section Headings: Converging Left & Right Subtle Slide + Fade-in (All Pages & Devices)
+    const allHeadings = document.querySelectorAll(
+      '.title-h1:not(.hero-legacy-title):not(.couple-hero-title), ' +
+      '.title-h2:not(.hero-legacy-title):not(.couple-hero-title), ' +
+      '.section h1:not(.hero-legacy-title):not(.couple-hero-title), ' +
+      '.section h2:not(.hero-legacy-title):not(.couple-hero-title), ' +
+      '.faq-heading, .reviews-carousel-header h2'
+    );
+
+    allHeadings.forEach((heading) => {
+      if (heading.dataset.headingAnimated) return;
+      heading.dataset.headingAnimated = 'true';
+
+      let rawText = heading.innerText.trim();
+      if (rawText === 'SELECTEDWORK') {
+        rawText = 'SELECTED WORK';
+      }
+      const words = rawText.split(/\s+/);
+
+      if (words.length >= 2) {
+        const mid = Math.ceil(words.length / 2);
+        const leftWords = words.slice(0, mid).join(' ');
+        const rightWords = words.slice(mid).join(' ');
+
+        heading.innerHTML = 
+          `<span class="heading-converge-left" style="display: inline-block; will-change: transform, opacity; margin-right: 0.35em;">${leftWords}</span> ` +
+          `<span class="heading-converge-right" style="display: inline-block; will-change: transform, opacity;">${rightWords}</span>`;
+
+        const leftEl = heading.querySelector('.heading-converge-left');
+        const rightEl = heading.querySelector('.heading-converge-right');
+
+        gsap.set(leftEl, { x: -35, opacity: 0 });
+        gsap.set(rightEl, { x: 35, opacity: 0 });
+
+        ScrollTrigger.create({
+          trigger: heading,
+          start: 'top 85%',
+          once: true,
+          onEnter: () => {
+            gsap.to(leftEl, {
+              x: 0,
+              opacity: 1,
+              duration: 0.85,
+              ease: 'power3.out'
+            });
+            gsap.to(rightEl, {
+              x: 0,
+              opacity: 1,
+              duration: 0.85,
+              ease: 'power3.out'
+            });
+          }
+        });
+      } else if (words.length === 1 && rawText.length > 0) {
+        heading.innerHTML = `<span class="heading-converge-single" style="display: inline-block; will-change: transform, opacity;">${rawText}</span>`;
+        const singleEl = heading.querySelector('.heading-converge-single');
+        gsap.set(singleEl, { y: 28, opacity: 0 });
+
+        ScrollTrigger.create({
+          trigger: heading,
+          start: 'top 85%',
+          once: true,
+          onEnter: () => {
+            gsap.to(singleEl, {
+              y: 0,
+              opacity: 1,
+              duration: 0.85,
+              ease: 'power3.out'
+            });
+          }
+        });
+      }
+    });
+
+    // 2g. Story / About Us Section: Staggered Fade + Slide Up Animation
+    const storyContainers = document.querySelectorAll('.story-text-container');
+    storyContainers.forEach((storyWrap) => {
+      if (!window.gsap || !window.ScrollTrigger || prefersReducedMotion) return;
+
+      const storyItems = Array.from(storyWrap.children);
+      if (storyItems.length === 0) return;
+
+      gsap.set(storyItems, { y: 30, opacity: 0 });
+
+      ScrollTrigger.create({
+        trigger: storyWrap,
+        start: 'top 80%',
+        once: true,
+        onEnter: () => {
+          gsap.to(storyItems, {
+            y: 0,
+            opacity: 1,
+            duration: 0.85,
+            stagger: 0.14,
+            ease: 'power3.out'
+          });
+        }
+      });
+    });
   }
 
   // 3. FAQ Accordion Toggle Behavior (Single-Open Accordion)
@@ -239,52 +465,170 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    // Mobile & Tablet (<= 768px): Smooth Staggered Scroll-Reveals Tailored for 1-Col / 2-Col
+    // Mobile & Tablet (<= 768px): 3-Column Mobile Bleed Pyramid Catch-Up Animation
     mm.add("(max-width: 768px)", () => {
       const gridContainer = document.querySelector('.grid-5');
       if (gridContainer) {
-        const cards = Array.from(gridContainer.querySelectorAll('.gallery-card'));
+        // Exclude the 25th hidden card so we have 24 cards (8 rows of 3)
+        const cards = Array.from(gridContainer.querySelectorAll('.gallery-card')).slice(0, 24);
+
         if (cards.length > 0) {
-          gsap.set(cards, { yPercent: 0, y: 30, opacity: 0.15, scale: 0.96 });
-          cards.forEach((card) => {
-            gsap.to(card, {
-              y: 0,
-              opacity: 1,
-              scale: 1,
-              duration: 0.6,
-              ease: 'power2.out',
-              scrollTrigger: {
-                trigger: card,
-                start: 'top 90%',
-                end: 'top 60%',
-                toggleActions: 'play none none none'
-              }
-            });
+          const colLeft = [];   // Column 1 (Left Bleed: index % 3 === 0)
+          const colCenter = []; // Column 2 (Center Anchor: index % 3 === 1)
+          const colRight = [];  // Column 3 (Right Bleed: index % 3 === 2)
+
+          cards.forEach((card, index) => {
+            const col = index % 3;
+            if (col === 1) {
+              colCenter.push(card);
+            } else if (col === 0) {
+              colLeft.push(card);
+            } else {
+              colRight.push(card);
+            }
           });
+
+          // Set starting pyramid offsets for mobile 3-column bleed:
+          // - Center column: 0% extra offset (baseline reference), 100% full opacity
+          // - Left & Right columns: 75% lower down, 95% opacity
+          gsap.set(colCenter, { yPercent: 0, opacity: 1, scale: 1 });
+          gsap.set([colLeft, colRight], { yPercent: 75, opacity: 0.95, scale: 0.96 });
+
+          const mPyramidTl = gsap.timeline({
+            scrollTrigger: {
+              trigger: gridContainer,
+              start: 'top 80%',
+              end: 'bottom 40%',
+              scrub: 1.0,
+              invalidateOnRefresh: true
+            }
+          });
+
+          // Exact mobile choreography:
+          // - Center Column: leads the anchor (0% -> 25% of scroll distance)
+          // - Left & Right Columns: glide upward and catch up (10% -> 85% of scroll distance)
+          mPyramidTl.to(colCenter, {
+            yPercent: 0,
+            opacity: 1,
+            scale: 1,
+            duration: 25,
+            ease: 'power2.out'
+          }, 0);
+
+          mPyramidTl.to([colLeft, colRight], {
+            yPercent: 0,
+            opacity: 1,
+            scale: 1,
+            duration: 70,
+            ease: 'power2.inOut'
+          }, 10);
         }
       }
 
       const portfolioGrid = document.querySelector('.portfolio-grid');
       if (portfolioGrid) {
-        const pCards = Array.from(portfolioGrid.querySelectorAll('.story-card'));
-        if (pCards.length > 0) {
-          gsap.set(pCards, { yPercent: 0, y: 35, opacity: 0.2, scale: 0.96 });
-          pCards.forEach((card) => {
-            gsap.to(card, {
-              y: 0,
-              opacity: 1,
-              scale: 1,
-              duration: 0.65,
-              ease: 'power2.out',
-              scrollTrigger: {
-                trigger: card,
-                start: 'top 88%',
-                end: 'top 55%',
-                toggleActions: 'play none none none'
-              }
-            });
-          });
+        // Exclude any orphan if cards count is not divisible by 3
+        const allPCards = Array.from(portfolioGrid.querySelectorAll('.story-card'));
+        const validCount = Math.floor(allPCards.length / 3) * 3;
+        const pCards = allPCards.slice(0, validCount);
+
+        // Hide any remaining orphan cards on mobile
+        if (allPCards.length > validCount) {
+          allPCards.slice(validCount).forEach(c => c.style.display = 'none');
         }
+
+        if (pCards.length > 0) {
+          const colLeft = [];   // Column 1 (Left Bleed: index % 3 === 0)
+          const colCenter = []; // Column 2 (Center Anchor: index % 3 === 1)
+          const colRight = [];  // Column 3 (Right Bleed: index % 3 === 2)
+
+          pCards.forEach((card, index) => {
+            const col = index % 3;
+            if (col === 1) {
+              colCenter.push(card);
+            } else if (col === 0) {
+              colLeft.push(card);
+            } else {
+              colRight.push(card);
+            }
+          });
+
+          // Set starting pyramid offsets for portfolio mobile 3-column bleed:
+          // - Center column: 0% extra offset, full opacity
+          // - Left & Right columns: 75% lower down, 95% opacity
+          gsap.set(colCenter, { yPercent: 0, opacity: 1, scale: 1 });
+          gsap.set([colLeft, colRight], { yPercent: 75, opacity: 0.95, scale: 0.96 });
+
+          const pPyramidTl = gsap.timeline({
+            scrollTrigger: {
+              trigger: portfolioGrid,
+              start: 'top 80%',
+              end: 'bottom 40%',
+              scrub: 1.0,
+              invalidateOnRefresh: true
+            }
+          });
+
+          // Exact mobile choreography:
+          // - Center Column: leads anchor
+          // - Left & Right Columns: glide upward and catch up
+          pPyramidTl.to(colCenter, {
+            yPercent: 0,
+            opacity: 1,
+            scale: 1,
+            duration: 25,
+            ease: 'power2.out'
+          }, 0);
+
+          pPyramidTl.to([colLeft, colRight], {
+            yPercent: 0,
+            opacity: 1,
+            scale: 1,
+            duration: 70,
+            ease: 'power2.inOut'
+          }, 10);
+        }
+      }
+    });
+  }
+
+  // 5c. Couple Wedding Trio Showcase: Center First Reveal, then 0.4s Staggered Side Slide-Up (All Devices)
+  if (window.gsap && window.ScrollTrigger && !prefersReducedMotion) {
+    const trioContainers = document.querySelectorAll('.trio-showcase-container');
+    trioContainers.forEach((trio) => {
+      const centerCard = trio.querySelector('.trio-img-center');
+      const leftCard = trio.querySelector('.trio-img-left');
+      const rightCard = trio.querySelector('.trio-img-right');
+      const sideCards = [leftCard, rightCard].filter(Boolean);
+
+      if (centerCard && sideCards.length > 0) {
+        gsap.set(centerCard, { y: 55, opacity: 0 });
+        gsap.set(sideCards, { y: 65, opacity: 0 });
+
+        const trioTl = gsap.timeline({
+          scrollTrigger: {
+            trigger: trio,
+            start: 'top 82%',
+            toggleActions: 'play none none none'
+          }
+        });
+
+        // 1st: Center image reveals first when reaching this section
+        trioTl.to(centerCard, {
+          y: 0,
+          opacity: 1,
+          duration: 0.85,
+          ease: 'power3.out'
+        }, 0);
+
+        // 2nd: After 0.4s delay, side images 1 & 3 slide up with staggered reveal
+        trioTl.to(sideCards, {
+          y: 0,
+          opacity: 1,
+          duration: 0.85,
+          stagger: 0.12,
+          ease: 'power3.out'
+        }, 0.4);
       }
     });
   }
@@ -312,20 +656,20 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
 
-    // 6b. Scroll-Triggered Background Color Transition 2: Dark Black -> Light Cream (Our Weddings -> The Ritesh Story)
+    // 6b. Scroll-Triggered Background Color Transition 2: Dark Black -> Light Cream (Our Weddings -> The Singh Story)
     const weddingsSection = document.getElementById('our-weddings-section');
-    const riteshStorySection = document.getElementById('guided-by-emotion-section');
+    const singhphotosStorySection = document.getElementById('guided-by-emotion-section');
 
-    if (weddingsSection && riteshStorySection) {
+    if (weddingsSection && singhphotosStorySection) {
       // Set starting state: Dark Black #050505
-      gsap.set([weddingsSection, riteshStorySection], { backgroundColor: '#050505' });
+      gsap.set([weddingsSection, singhphotosStorySection], { backgroundColor: '#050505' });
 
-      // Animate Our Weddings & The Ritesh Story together from Dark Black (#050505) -> Light Cream (#FAF5EA)
-      gsap.to([weddingsSection, riteshStorySection], {
+      // Animate Our Weddings & The Singh Story together from Dark Black (#050505) -> Light Cream (#FAF5EA)
+      gsap.to([weddingsSection, singhphotosStorySection], {
         backgroundColor: '#FAF5EA',
         ease: 'power1.inOut',
         scrollTrigger: {
-          trigger: riteshStorySection,
+          trigger: singhphotosStorySection,
           start: 'top 80%',
           end: 'top 20%',
           scrub: 0.8,
@@ -843,4 +1187,51 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
   });
+
+  // 12. Universal Paragraph Blur-to-Focus Reveal Effect (Whole Paragraph)
+  if (window.gsap && window.ScrollTrigger && !prefersReducedMotion) {
+    const unassignedParagraphs = document.querySelectorAll(
+      'main p:not(.hero-subheading-text):not(.story-type-p):not(.p-typed), ' +
+      'section p:not(.hero-subheading-text):not(.story-type-p):not(.p-typed)'
+    );
+
+    unassignedParagraphs.forEach((para) => {
+      if (
+        para.closest('.site-footer') || 
+        para.closest('.site-header') || 
+        para.closest('.mobile-nav-drawer') || 
+        para.closest('.story-text-container') || 
+        para.closest('.hero-fullscreen') ||
+        para.closest('.section-quote-block') ||
+        para.closest('.sentence-contact-split') ||
+        para.closest('.hero-collage-section')
+      ) {
+        return;
+      }
+      if (para.dataset.blurRevealDone) return;
+      para.dataset.blurRevealDone = 'true';
+
+      gsap.set(para, {
+        filter: 'blur(10px)',
+        opacity: 0,
+        y: 18,
+        willChange: 'filter, opacity, transform'
+      });
+
+      ScrollTrigger.create({
+        trigger: para,
+        start: 'top 86%',
+        once: true,
+        onEnter: () => {
+          gsap.to(para, {
+            filter: 'blur(0px)',
+            opacity: 1,
+            y: 0,
+            duration: 0.9,
+            ease: 'power2.out'
+          });
+        }
+      });
+    });
+  }
 });
